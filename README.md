@@ -1,3 +1,12 @@
+I recently came across a fascinating paper titled "Effect of the Initial Configuration of Weights on the Training and Function of Artificial Neural Networks" (https://arxiv.org/pdf/2012.02550). It clearly demonstrates the impact of the initial weight configuration on the performance and function of neural networks during the training process.
+
+In simple terms, a neural network is like a complex machine with many "switches" (i.e., weights). These switches are randomly set at the beginning. During training, these settings are gradually adjusted, with the goal of enabling the network to produce the most accurate output possible.
+
+Through their analysis, the authors found that when using common training methods (such as SGD/AdamW), the final state of the network often remains close to the initial configuration. It’s like the network is "fine-tuning" its initial state rather than completely resetting or rearranging all the switches.
+
+Training algorithms generally don't need to venture too far from the initial settings—an optimal solution can often be found in the vicinity of the initial configuration.
+
+
 ```python
 %matplotlib inline
 import os
@@ -252,7 +261,7 @@ plt.show()
 
 
     
-![png](play_files/play_3_1.png)
+![png](play_files/play_4_1.png)
     
 
 
@@ -285,7 +294,7 @@ viz_sd_fn(a_matrix_weights)
 
 
     
-![png](play_files/play_5_0.png)
+![png](play_files/play_6_0.png)
     
 
 
@@ -385,7 +394,7 @@ viz_sd_fn(a_adam_trained_weights)
 
 
     
-![png](play_files/play_8_0.png)
+![png](play_files/play_9_0.png)
     
 
 
@@ -485,7 +494,7 @@ viz_sd_fn(a_muon_trained_weights)
 
 
     
-![png](play_files/play_11_0.png)
+![png](play_files/play_12_0.png)
     
 
 
@@ -567,14 +576,14 @@ fig
 
 
     
-![png](play_files/play_13_0.png)
+![png](play_files/play_14_0.png)
     
 
 
 
 
     
-![png](play_files/play_13_1.png)
+![png](play_files/play_14_1.png)
     
 
 
@@ -631,14 +640,14 @@ fig
 
 
     
-![png](play_files/play_14_0.png)
+![png](play_files/play_15_0.png)
     
 
 
 
 
     
-![png](play_files/play_14_1.png)
+![png](play_files/play_15_1.png)
     
 
 
