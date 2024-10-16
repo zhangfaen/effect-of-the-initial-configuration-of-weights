@@ -1,3 +1,4 @@
+## Introduction
 I recently came across a fascinating paper titled "Effect of the Initial Configuration of Weights on the Training and Function of Artificial Neural Networks" (https://arxiv.org/pdf/2012.02550). It clearly demonstrates the impact of the initial weight configuration on the performance and function of neural networks during the training process.
 
 In simple terms, a neural network is like a complex machine with many "switches" (i.e., weights). These switches are randomly set at the beginning. During training, these settings are gradually adjusted, with the goal of enabling the network to produce the most accurate output possible.
@@ -5,6 +6,16 @@ In simple terms, a neural network is like a complex machine with many "switches"
 Through their analysis, the authors found that when using common training methods (such as SGD/AdamW), the final state of the network often remains close to the initial configuration. It’s like the network is "fine-tuning" its initial state rather than completely resetting or rearranging all the switches.
 
 Training algorithms generally don't need to venture too far from the initial settings—an optimal solution can often be found in the vicinity of the initial configuration.
+
+## Create Environment
+
+```bash
+conda create -n effect python=3.10 -y
+conda activate effect
+pip install -r requirements.txt
+```
+
+## Run and enjoy below code cells
 
 
 ```python
@@ -210,9 +221,8 @@ print(font_manager.get_font_names())
 print(font_manager.findfont("DejaVu Sans Display"))
 ```
 
-    ['Z003', 'C059', 'Latin Modern Math', 'DejaVu Sans Display', 'TeX Gyre Heros Cn', 'Latin Modern Mono', 'TeX Gyre DejaVu Math', 'STIXSizeTwoSym', 'Standard Symbols PS', 'TeX Gyre Pagella Math', 'Noto Mono', 'STIXSizeThreeSym', 'TeX Gyre Heros', 'cmex10', 'Latin Modern Roman Dunhill', 'TeX Gyre Bonum', 'Latin Modern Mono Prop', 'Nimbus Sans Narrow', 'Latin Modern Roman Demi', 'TeX Gyre Termes Math', 'TeX Gyre Termes', 'Latin Modern Roman Unslanted', 'cmb10', 'DejaVu Sans Mono', 'Latin Modern Roman', 'TeX Gyre Chorus', 'Droid Sans Fallback', 'cmsy10', 'Latin Modern Mono Light Cond', 'Latin Modern Mono Caps', 'Nimbus Mono PS', 'STIXSizeOneSym', 'Lato', 'Latin Modern Sans Quotation', 'cmr10', 'TeX Gyre Schola', 'cmmi10', 'TeX Gyre Pagella', 'Nimbus Sans', 'cmtt10', 'Noto Sans Mono', 'D050000L', 'Latin Modern Mono Prop Light', 'Latin Modern Roman Caps', 'cmss10', 'STIXNonUnicode', 'DejaVu Serif Display', 'Latin Modern Mono Light', 'TeX Gyre Bonum Math', 'Latin Modern Roman Slanted', 'URW Bookman', 'STIXGeneral', 'URW Gothic', 'STIXSizeFiveSym', 'Latin Modern Sans', 'DejaVu Math TeX Gyre', 'Latin Modern Sans Demi Cond', 'Nimbus Roman', 'TeX Gyre Cursor', 'Latin Modern Mono Slanted', 'DejaVu Serif', 'STIXSizeFourSym', 'P052', 'DejaVu Sans', 'TeX Gyre Adventor', 'TeX Gyre Schola Math']
-    /data/home_mount/zhangfaen/miniconda3/envs/qwen2-VL/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf
-    ['BytesIO', 'FontEntry', 'FontManager', 'FontProperties', 'MSFolders', 'MSFontDirectories', 'MSUserFontDirectories', 'Number', 'OSXFontDirectories', 'Path', 'X11FontDirectories', '_ExceptionProxy', '_HOME', '_JSONEncoder', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '_afm', '_api', '_cached_realpath', '_get_font', '_get_fontconfig_fonts', '_get_macos_fonts', '_get_win32_installed_fonts', '_json_decode', '_load_fontmanager', '_log', '_validators', '_weight_regexes', 'afmFontProperty', 'annotations', 'b64encode', 'cbook', 'copy', 'dataclasses', 'findSystemFonts', 'findfont', 'fontManager', 'font_family_aliases', 'font_scalings', 'ft2font', 'generate_fontconfig_pattern', 'get_font', 'get_font_names', 'get_fontext_synonyms', 'is_opentype_cff_font', 'json', 'json_dump', 'json_load', 'list_fonts', 'logging', 'lru_cache', 'mpl', 'namedtuple', 'os', 'parse_fontconfig_pattern', 'plistlib', 're', 'stretch_dict', 'subprocess', 'sys', 'threading', 'ttfFontProperty', 'weight_dict', 'win32FontDirectory']
+    ['cmb10', 'Latin Modern Roman Dunhill', 'Latin Modern Roman Demi', 'cmr10', 'TeX Gyre Heros', 'C059', 'Latin Modern Mono Prop Light', 'STIXSizeOneSym', 'DejaVu Serif Display', 'STIXNonUnicode', 'TeX Gyre Heros Cn', 'Z003', 'TeX Gyre Chorus', 'cmex10', 'DejaVu Math TeX Gyre', 'Latin Modern Mono Slanted', 'TeX Gyre Bonum Math', 'URW Gothic', 'Latin Modern Mono Light Cond', 'Latin Modern Sans Demi Cond', 'cmss10', 'STIXGeneral', 'cmtt10', 'Lato', 'TeX Gyre Pagella Math', 'Noto Mono', 'Nimbus Roman', 'Latin Modern Roman', 'Latin Modern Mono Prop', 'Latin Modern Mono Light', 'TeX Gyre DejaVu Math', 'Latin Modern Sans Quotation', 'STIXSizeFiveSym', 'TeX Gyre Termes', 'TeX Gyre Adventor', 'Latin Modern Math', 'cmsy10', 'Latin Modern Roman Slanted', 'Nimbus Sans', 'Droid Sans Fallback', 'Latin Modern Roman Caps', 'DejaVu Sans Display', 'Latin Modern Mono', 'Noto Sans Mono', 'DejaVu Sans Mono', 'Latin Modern Sans', 'STIXSizeTwoSym', 'Nimbus Mono PS', 'Latin Modern Roman Unslanted', 'Latin Modern Mono Caps', 'P052', 'STIXSizeThreeSym', 'DejaVu Sans', 'cmmi10', 'URW Bookman', 'Standard Symbols PS', 'TeX Gyre Schola', 'TeX Gyre Cursor', 'Nimbus Sans Narrow', 'DejaVu Serif', 'TeX Gyre Pagella', 'TeX Gyre Bonum', 'D050000L', 'STIXSizeFourSym', 'TeX Gyre Schola Math', 'TeX Gyre Termes Math']
+    /data/home_mount/zhangfaen/miniconda3/envs/effect/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf
 
 
 
@@ -255,13 +265,13 @@ plt.colorbar()
 plt.show()
 ```
 
-    <PIL.ImageFont.FreeTypeFont object at 0x14fca0911d50>
+    <PIL.ImageFont.FreeTypeFont object at 0x152ebaf45900>
     (128, 128)
 
 
 
     
-![png](play_files/play_4_1.png)
+![png](play_files/play_5_1.png)
     
 
 
@@ -294,7 +304,7 @@ viz_sd_fn(a_matrix_weights)
 
 
     
-![png](play_files/play_6_0.png)
+![png](play_files/play_7_0.png)
     
 
 
@@ -307,37 +317,37 @@ rand_adam_trained_weights = {k: v.clone().detach() for k, v in model.state_dict(
 ```
 
     training on cuda, torch.bfloat16
-    Epoch 0/10, Train Accuracy: 7.45%, Test Accuracy: 7.14%
+    Epoch 0/10, Train Accuracy: 8.07%, Test Accuracy: 8.74%
     ----------------------------------------------------------------------------------------------------
     Epoch 1/10, Batch 0/118, Loss: 2.3125
-    Epoch 1/10, Train Accuracy: 92.92%, Test Accuracy: 93.13%
+    Epoch 1/10, Train Accuracy: 92.52%, Test Accuracy: 92.51%
     ----------------------------------------------------------------------------------------------------
-    Epoch 2/10, Batch 0/118, Loss: 0.2656
-    Epoch 2/10, Train Accuracy: 94.67%, Test Accuracy: 94.44%
+    Epoch 2/10, Batch 0/118, Loss: 0.2852
+    Epoch 2/10, Train Accuracy: 95.31%, Test Accuracy: 94.70%
     ----------------------------------------------------------------------------------------------------
     Epoch 3/10, Batch 0/118, Loss: 0.1816
-    Epoch 3/10, Train Accuracy: 96.12%, Test Accuracy: 95.75%
+    Epoch 3/10, Train Accuracy: 96.48%, Test Accuracy: 95.88%
     ----------------------------------------------------------------------------------------------------
-    Epoch 4/10, Batch 0/118, Loss: 0.1416
-    Epoch 4/10, Train Accuracy: 96.68%, Test Accuracy: 96.15%
+    Epoch 4/10, Batch 0/118, Loss: 0.0913
+    Epoch 4/10, Train Accuracy: 97.32%, Test Accuracy: 96.56%
     ----------------------------------------------------------------------------------------------------
-    Epoch 5/10, Batch 0/118, Loss: 0.0957
-    Epoch 5/10, Train Accuracy: 97.23%, Test Accuracy: 96.37%
+    Epoch 5/10, Batch 0/118, Loss: 0.1094
+    Epoch 5/10, Train Accuracy: 97.77%, Test Accuracy: 96.90%
     ----------------------------------------------------------------------------------------------------
-    Epoch 6/10, Batch 0/118, Loss: 0.1250
-    Epoch 6/10, Train Accuracy: 97.92%, Test Accuracy: 96.95%
+    Epoch 6/10, Batch 0/118, Loss: 0.0654
+    Epoch 6/10, Train Accuracy: 97.59%, Test Accuracy: 96.67%
     ----------------------------------------------------------------------------------------------------
-    Epoch 7/10, Batch 0/118, Loss: 0.0586
-    Epoch 7/10, Train Accuracy: 98.15%, Test Accuracy: 97.12%
+    Epoch 7/10, Batch 0/118, Loss: 0.1128
+    Epoch 7/10, Train Accuracy: 98.12%, Test Accuracy: 96.91%
     ----------------------------------------------------------------------------------------------------
-    Epoch 8/10, Batch 0/118, Loss: 0.0479
-    Epoch 8/10, Train Accuracy: 98.41%, Test Accuracy: 97.34%
+    Epoch 8/10, Batch 0/118, Loss: 0.0544
+    Epoch 8/10, Train Accuracy: 98.49%, Test Accuracy: 97.32%
     ----------------------------------------------------------------------------------------------------
-    Epoch 9/10, Batch 0/118, Loss: 0.0522
-    Epoch 9/10, Train Accuracy: 98.66%, Test Accuracy: 97.41%
+    Epoch 9/10, Batch 0/118, Loss: 0.0500
+    Epoch 9/10, Train Accuracy: 98.75%, Test Accuracy: 97.45%
     ----------------------------------------------------------------------------------------------------
-    Epoch 10/10, Batch 0/118, Loss: 0.0311
-    Epoch 10/10, Train Accuracy: 98.89%, Test Accuracy: 97.49%
+    Epoch 10/10, Batch 0/118, Loss: 0.0469
+    Epoch 10/10, Train Accuracy: 98.46%, Test Accuracy: 97.05%
     ----------------------------------------------------------------------------------------------------
     Training completed!
 
@@ -351,37 +361,37 @@ a_adam_trained_weights = {k: v.clone().detach() for k, v in model.state_dict().i
 ```
 
     training on cuda, torch.bfloat16
-    Epoch 0/10, Train Accuracy: 9.04%, Test Accuracy: 8.92%
+    Epoch 0/10, Train Accuracy: 9.93%, Test Accuracy: 10.32%
     ----------------------------------------------------------------------------------------------------
-    Epoch 1/10, Batch 0/118, Loss: 3.6562
-    Epoch 1/10, Train Accuracy: 64.81%, Test Accuracy: 65.24%
+    Epoch 1/10, Batch 0/118, Loss: 3.1094
+    Epoch 1/10, Train Accuracy: 88.87%, Test Accuracy: 89.48%
     ----------------------------------------------------------------------------------------------------
-    Epoch 2/10, Batch 0/118, Loss: 1.0234
-    Epoch 2/10, Train Accuracy: 92.13%, Test Accuracy: 92.07%
+    Epoch 2/10, Batch 0/118, Loss: 0.3750
+    Epoch 2/10, Train Accuracy: 93.49%, Test Accuracy: 93.26%
     ----------------------------------------------------------------------------------------------------
-    Epoch 3/10, Batch 0/118, Loss: 0.3359
-    Epoch 3/10, Train Accuracy: 93.82%, Test Accuracy: 93.41%
+    Epoch 3/10, Batch 0/118, Loss: 0.2715
+    Epoch 3/10, Train Accuracy: 95.15%, Test Accuracy: 94.89%
     ----------------------------------------------------------------------------------------------------
-    Epoch 4/10, Batch 0/118, Loss: 0.2168
-    Epoch 4/10, Train Accuracy: 94.67%, Test Accuracy: 94.35%
+    Epoch 4/10, Batch 0/118, Loss: 0.1289
+    Epoch 4/10, Train Accuracy: 95.97%, Test Accuracy: 95.34%
     ----------------------------------------------------------------------------------------------------
-    Epoch 5/10, Batch 0/118, Loss: 0.1611
-    Epoch 5/10, Train Accuracy: 95.16%, Test Accuracy: 94.81%
+    Epoch 5/10, Batch 0/118, Loss: 0.1426
+    Epoch 5/10, Train Accuracy: 96.41%, Test Accuracy: 95.74%
     ----------------------------------------------------------------------------------------------------
-    Epoch 6/10, Batch 0/118, Loss: 0.2295
-    Epoch 6/10, Train Accuracy: 95.59%, Test Accuracy: 95.01%
+    Epoch 6/10, Batch 0/118, Loss: 0.1030
+    Epoch 6/10, Train Accuracy: 96.84%, Test Accuracy: 96.07%
     ----------------------------------------------------------------------------------------------------
-    Epoch 7/10, Batch 0/118, Loss: 0.1807
-    Epoch 7/10, Train Accuracy: 95.69%, Test Accuracy: 94.93%
+    Epoch 7/10, Batch 0/118, Loss: 0.0913
+    Epoch 7/10, Train Accuracy: 97.28%, Test Accuracy: 96.35%
     ----------------------------------------------------------------------------------------------------
-    Epoch 8/10, Batch 0/118, Loss: 0.1270
-    Epoch 8/10, Train Accuracy: 96.05%, Test Accuracy: 95.08%
+    Epoch 8/10, Batch 0/118, Loss: 0.0708
+    Epoch 8/10, Train Accuracy: 97.32%, Test Accuracy: 95.92%
     ----------------------------------------------------------------------------------------------------
-    Epoch 9/10, Batch 0/118, Loss: 0.1455
-    Epoch 9/10, Train Accuracy: 96.42%, Test Accuracy: 95.73%
+    Epoch 9/10, Batch 0/118, Loss: 0.0952
+    Epoch 9/10, Train Accuracy: 97.88%, Test Accuracy: 96.66%
     ----------------------------------------------------------------------------------------------------
-    Epoch 10/10, Batch 0/118, Loss: 0.1270
-    Epoch 10/10, Train Accuracy: 96.69%, Test Accuracy: 95.77%
+    Epoch 10/10, Batch 0/118, Loss: 0.0708
+    Epoch 10/10, Train Accuracy: 98.07%, Test Accuracy: 96.58%
     ----------------------------------------------------------------------------------------------------
     Training completed!
 
@@ -394,7 +404,7 @@ viz_sd_fn(a_adam_trained_weights)
 
 
     
-![png](play_files/play_9_0.png)
+![png](play_files/play_10_0.png)
     
 
 
@@ -407,37 +417,37 @@ a_muon_trained_weights = {k: v.clone().detach() for k, v in model.state_dict().i
 ```
 
     training on cuda, torch.bfloat16
-    Epoch 0/10, Train Accuracy: 9.04%, Test Accuracy: 8.92%
+    Epoch 0/10, Train Accuracy: 9.93%, Test Accuracy: 10.32%
     ----------------------------------------------------------------------------------------------------
-    Epoch 1/10, Batch 0/118, Loss: 3.4844
-    Epoch 1/10, Train Accuracy: 96.54%, Test Accuracy: 95.47%
+    Epoch 1/10, Batch 0/118, Loss: 3.0469
+    Epoch 1/10, Train Accuracy: 95.83%, Test Accuracy: 94.85%
     ----------------------------------------------------------------------------------------------------
-    Epoch 2/10, Batch 0/118, Loss: 0.1030
-    Epoch 2/10, Train Accuracy: 98.12%, Test Accuracy: 96.51%
+    Epoch 2/10, Batch 0/118, Loss: 0.1348
+    Epoch 2/10, Train Accuracy: 98.06%, Test Accuracy: 96.17%
     ----------------------------------------------------------------------------------------------------
-    Epoch 3/10, Batch 0/118, Loss: 0.0542
-    Epoch 3/10, Train Accuracy: 99.05%, Test Accuracy: 97.12%
+    Epoch 3/10, Batch 0/118, Loss: 0.0796
+    Epoch 3/10, Train Accuracy: 98.63%, Test Accuracy: 96.87%
     ----------------------------------------------------------------------------------------------------
-    Epoch 4/10, Batch 0/118, Loss: 0.0245
-    Epoch 4/10, Train Accuracy: 98.94%, Test Accuracy: 96.58%
+    Epoch 4/10, Batch 0/118, Loss: 0.0386
+    Epoch 4/10, Train Accuracy: 98.34%, Test Accuracy: 96.28%
     ----------------------------------------------------------------------------------------------------
-    Epoch 5/10, Batch 0/118, Loss: 0.0374
-    Epoch 5/10, Train Accuracy: 98.91%, Test Accuracy: 96.61%
+    Epoch 5/10, Batch 0/118, Loss: 0.0527
+    Epoch 5/10, Train Accuracy: 99.03%, Test Accuracy: 97.15%
     ----------------------------------------------------------------------------------------------------
-    Epoch 6/10, Batch 0/118, Loss: 0.0283
-    Epoch 6/10, Train Accuracy: 99.37%, Test Accuracy: 97.19%
+    Epoch 6/10, Batch 0/118, Loss: 0.0713
+    Epoch 6/10, Train Accuracy: 98.88%, Test Accuracy: 96.70%
     ----------------------------------------------------------------------------------------------------
-    Epoch 7/10, Batch 0/118, Loss: 0.0244
-    Epoch 7/10, Train Accuracy: 99.31%, Test Accuracy: 96.84%
+    Epoch 7/10, Batch 0/118, Loss: 0.0076
+    Epoch 7/10, Train Accuracy: 98.91%, Test Accuracy: 96.52%
     ----------------------------------------------------------------------------------------------------
-    Epoch 8/10, Batch 0/118, Loss: 0.0225
-    Epoch 8/10, Train Accuracy: 99.43%, Test Accuracy: 97.10%
+    Epoch 8/10, Batch 0/118, Loss: 0.0654
+    Epoch 8/10, Train Accuracy: 99.18%, Test Accuracy: 97.12%
     ----------------------------------------------------------------------------------------------------
-    Epoch 9/10, Batch 0/118, Loss: 0.0461
-    Epoch 9/10, Train Accuracy: 99.47%, Test Accuracy: 96.96%
+    Epoch 9/10, Batch 0/118, Loss: 0.0334
+    Epoch 9/10, Train Accuracy: 99.43%, Test Accuracy: 97.16%
     ----------------------------------------------------------------------------------------------------
-    Epoch 10/10, Batch 0/118, Loss: 0.0108
-    Epoch 10/10, Train Accuracy: 99.38%, Test Accuracy: 97.02%
+    Epoch 10/10, Batch 0/118, Loss: 0.0188
+    Epoch 10/10, Train Accuracy: 99.24%, Test Accuracy: 96.89%
     ----------------------------------------------------------------------------------------------------
     Training completed!
 
@@ -451,37 +461,37 @@ rand_muon_trained_weights = {k: v.clone().detach() for k, v in model.state_dict(
 ```
 
     training on cuda, torch.bfloat16
-    Epoch 0/10, Train Accuracy: 7.45%, Test Accuracy: 7.14%
+    Epoch 0/10, Train Accuracy: 8.07%, Test Accuracy: 8.74%
     ----------------------------------------------------------------------------------------------------
     Epoch 1/10, Batch 0/118, Loss: 2.3125
-    Epoch 1/10, Train Accuracy: 97.12%, Test Accuracy: 96.25%
+    Epoch 1/10, Train Accuracy: 97.46%, Test Accuracy: 96.75%
     ----------------------------------------------------------------------------------------------------
-    Epoch 2/10, Batch 0/118, Loss: 0.1064
-    Epoch 2/10, Train Accuracy: 98.86%, Test Accuracy: 97.58%
+    Epoch 2/10, Batch 0/118, Loss: 0.1021
+    Epoch 2/10, Train Accuracy: 98.77%, Test Accuracy: 97.52%
     ----------------------------------------------------------------------------------------------------
-    Epoch 3/10, Batch 0/118, Loss: 0.0447
-    Epoch 3/10, Train Accuracy: 99.24%, Test Accuracy: 97.61%
+    Epoch 3/10, Batch 0/118, Loss: 0.0481
+    Epoch 3/10, Train Accuracy: 99.25%, Test Accuracy: 97.52%
     ----------------------------------------------------------------------------------------------------
-    Epoch 4/10, Batch 0/118, Loss: 0.0223
-    Epoch 4/10, Train Accuracy: 99.18%, Test Accuracy: 97.37%
+    Epoch 4/10, Batch 0/118, Loss: 0.0242
+    Epoch 4/10, Train Accuracy: 99.23%, Test Accuracy: 97.43%
     ----------------------------------------------------------------------------------------------------
-    Epoch 5/10, Batch 0/118, Loss: 0.0077
-    Epoch 5/10, Train Accuracy: 99.19%, Test Accuracy: 97.49%
+    Epoch 5/10, Batch 0/118, Loss: 0.0047
+    Epoch 5/10, Train Accuracy: 99.44%, Test Accuracy: 97.38%
     ----------------------------------------------------------------------------------------------------
-    Epoch 6/10, Batch 0/118, Loss: 0.0129
-    Epoch 6/10, Train Accuracy: 99.42%, Test Accuracy: 97.40%
+    Epoch 6/10, Batch 0/118, Loss: 0.0098
+    Epoch 6/10, Train Accuracy: 99.48%, Test Accuracy: 97.46%
     ----------------------------------------------------------------------------------------------------
-    Epoch 7/10, Batch 0/118, Loss: 0.0108
-    Epoch 7/10, Train Accuracy: 99.47%, Test Accuracy: 97.68%
+    Epoch 7/10, Batch 0/118, Loss: 0.0062
+    Epoch 7/10, Train Accuracy: 99.40%, Test Accuracy: 97.30%
     ----------------------------------------------------------------------------------------------------
-    Epoch 8/10, Batch 0/118, Loss: 0.0066
-    Epoch 8/10, Train Accuracy: 99.37%, Test Accuracy: 97.38%
+    Epoch 8/10, Batch 0/118, Loss: 0.0398
+    Epoch 8/10, Train Accuracy: 99.57%, Test Accuracy: 97.51%
     ----------------------------------------------------------------------------------------------------
-    Epoch 9/10, Batch 0/118, Loss: 0.0610
-    Epoch 9/10, Train Accuracy: 99.48%, Test Accuracy: 97.37%
+    Epoch 9/10, Batch 0/118, Loss: 0.0074
+    Epoch 9/10, Train Accuracy: 99.49%, Test Accuracy: 97.16%
     ----------------------------------------------------------------------------------------------------
-    Epoch 10/10, Batch 0/118, Loss: 0.0140
-    Epoch 10/10, Train Accuracy: 99.53%, Test Accuracy: 97.14%
+    Epoch 10/10, Batch 0/118, Loss: 0.0182
+    Epoch 10/10, Train Accuracy: 99.42%, Test Accuracy: 97.33%
     ----------------------------------------------------------------------------------------------------
     Training completed!
 
@@ -494,7 +504,7 @@ viz_sd_fn(a_muon_trained_weights)
 
 
     
-![png](play_files/play_12_0.png)
+![png](play_files/play_13_0.png)
     
 
 
@@ -576,14 +586,14 @@ fig
 
 
     
-![png](play_files/play_14_0.png)
+![png](play_files/play_15_0.png)
     
 
 
 
 
     
-![png](play_files/play_14_1.png)
+![png](play_files/play_15_1.png)
     
 
 
@@ -640,14 +650,14 @@ fig
 
 
     
-![png](play_files/play_15_0.png)
+![png](play_files/play_16_0.png)
     
 
 
 
 
     
-![png](play_files/play_15_1.png)
+![png](play_files/play_16_1.png)
     
 
 
